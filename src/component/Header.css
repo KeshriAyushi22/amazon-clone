@@ -45,20 +45,31 @@
 /* HEADER - NAVIGATIONS */
 .header__nav {
   display: flex;
-  flex: 1;
+  justify-content: space-evenly;
 }
 
 .header__option {
   color: white;
   display: flex;
   flex-direction: column;
-  padding: 3px;
+  margin: 0 10px;
 }
 
 .header__optionOne {
-  font-size: 12px;
+  font-size: 10px;
 }
 .header__optionTwo {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/*HEADER BASKET*/
+.header__optionBasket {
+  display: flex;
+  color: white;
+  align-items: center;
+}
+
+.header__basketCount {
+  margin-left: 10px;
 }
