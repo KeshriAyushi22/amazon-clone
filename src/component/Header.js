@@ -12,7 +12,7 @@ import "./Header.css"
 
 
 function Header() {
-    //nee to make it on context api
+    //need to make it on context api
     const [lang, setLang] = useState('hin');
     console.log(lang);
 
