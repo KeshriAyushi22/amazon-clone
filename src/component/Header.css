@@ -42,6 +42,37 @@
   background-color: #e69c3d;
 }
 
+/*HEADER FLAG*/
+.header__optionFlag {
+  display: flex;
+  width: fit-content;
+}
+@media only screen and (max-width: 600px) {
+  .header__optionFlag {
+    display: inline-grid;
+  }
+}
+
+.country__flag {
+  width: 18px;
+  height: 25px;
+  padding: 5px 11px 0px 4px;
+}
+
+.MuiSelect-select.MuiSelect-select {
+  padding-right: 0px !important;
+  width: 8px;
+  text-decoration: none;
+  color: #131921;
+}
+.MuiSelect-select {
+  min-width: 0px !important;
+}
+
+.MuiMenu-list > option {
+  cursor: pointer !important;
+}
+
 /* HEADER - NAVIGATIONS */
 .header__nav {
   display: flex;
@@ -72,4 +103,8 @@
 
 .header__basketCount {
   margin-left: 10px;
+  color: #e69c3d;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: -4px;
 }
