@@ -1,8 +1,9 @@
 .home__container {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 15px;
   max-width: 1500px;
+  max-height: 350px;
 }
 .home__row {
   display: flex;

@@ -12,7 +12,7 @@ function Home() {
     return (
         <div className="home">
             <div className="home__container">
-                <Carousel autoPlay navButtonsAlwaysVisible timeout={1000} indicators={false} animation="slide">
+                <Carousel autoPlay navButtonsAlwaysVisible={false} timeout={1000} indicators={false} animation="slide">
                     {
                         list.map((item, i) => <img src={item} className="home__image" />)
                     }
