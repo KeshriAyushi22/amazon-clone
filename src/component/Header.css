@@ -65,8 +65,11 @@
   text-decoration: none;
   color: #131921;
 }
-.MuiInputBase-root > .MuiSvgIcon-root {
+.MuiSvgIcon-root {
   color: white !important;
+}
+.MuiSvgIcon-root:hover {
+  color: #e69c3d !important;
 }
 .MuiSelect-select {
   min-width: 0px !important;

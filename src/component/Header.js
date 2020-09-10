@@ -5,6 +5,7 @@ import { ShoppingCart } from '@material-ui/icons'
 import LocalizedStrings from 'react-localization';
 import { intl } from '../utils/localised'
 import Flag from 'react-world-flags'
+import { Link } from 'react-router-dom'
 
 import { dropDown } from "../utils/MaterialUtil"
 import { langItem } from '../utils/CommonUtil'
@@ -23,8 +24,10 @@ function Header() {
 
     return (
         <div className="header">
-            <img src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-                className="header__logo" />
+            <Link to="/">
+                <img src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                    className="header__logo" />
+            </Link>
 
             <div className="header__search">
                 <input className="header__searchInput" type="text" />
@@ -50,10 +53,13 @@ function Header() {
                     <span className="header__optionTwo">{strings.prime}</span>
                 </div>
                 <div className="header__optionBasket">
-                    <ShoppingCart fontSize="large" />
+                    <Link to="/checkout">
+                        <ShoppingCart fontSize="large" />
+                    </Link>
                     <div className="header__option">
                         <span className="header__optionOne header__basketCount">0</span>
                         <span className="header__optionTwo">{strings.cart}</span>
+
                     </div>
                 </div>
             </div>
