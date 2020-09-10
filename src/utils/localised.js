@@ -6,7 +6,13 @@ const intl = {
         "orders": 'Orders',
         "cart": 'Cart',
         "your": 'Your',
-        "prime": 'Prime'
+        "prime": 'Prime',
+        "product_23445930": "Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric",
+        "product_12321341": "The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback",
+        "product_49538094": "Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl",
+        "product_4903850": "Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor",
+        "product_3254354345": "New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)",
+        "product_90829332": "Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor -  Super Ultra Wide Dual WQHD 5120 x1440"
     },
     hin: {
         "hello": 'हैलो',
@@ -15,7 +21,15 @@ const intl = {
         "orders": 'और ऑर्डर',
         "cart": 'कॉर्ट',
         "your": 'आपका',
-        "prime": 'Prime'
+        "prime": 'Prime',
+        "product_23445930": 'अमेज़न इको (तीसरी पीढ़ी) | एलेक्सा, चारकोल फैब्रिक के साथ स्मार्ट स्पीकर',
+        "product_12321341": "द लीन स्टार्टअप: हाउ कॉन्स्टेंट इनोवेशन रेडिकली सक्सेसफुल बिजनेस पेपरबैक बनाता है",
+        "product_49538094": "बेकिंग के लिए केनवुड केमिक्स स्टैंड मिक्सर, के-बीटर, आटा हुक और व्हिस्क के साथ स्टाइलिश किचन मिक्सर, 5 लीटर ग्लास बाउल",
+        "product_4903850": "सैमसंग LC49RG90SSUXEN 49 'घुमावदार एलईडी गेमिंग मॉनिटर",
+        "product_3254354345": "नया Apple iPad Pro (12.9 इंच, वाई-फाई, 128 जीबी) - सिल्वर (4th जनरेशन)",
+        "product_90829332": "सैमसंग LC49RG90SSUXEN 49 'कर्व्ड एलईडी गेमिंग मॉनिटर - सुपर अल्ट्रा वाइड ड्यूल WQHD 5120 x1440"
+
+
     },
     urdu: {}
 }

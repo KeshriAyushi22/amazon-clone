@@ -3,8 +3,12 @@ import './Home.css'
 import Carousel from 'react-material-ui-carousel'
 import { list } from '../utils/ImageList'
 import Product from "./Product"
+import LocalizedStrings from 'react-localization';
+import { intl } from '../utils/localised'
 
 function Home() {
+    let strings = new LocalizedStrings(intl)
+    strings.setLanguage("en");
     return (
         <div className="home">
             <div className="home__container">
@@ -17,7 +21,7 @@ function Home() {
             <div className="home__row">
                 <Product
                     id="12321341"
-                    title="The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback"
+                    title={strings.product_12321341}
                     price="29.99"
                     rating={5}
                     image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
@@ -25,30 +29,30 @@ function Home() {
 
                 <Product
                     id="49538094"
-                    title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+                    title={strings.product_49538094}
                     price="239.0"
                     rating={4}
                     image="https://images-na.ssl-images-amazon.com/images/I/91gRKbX%2BS8L._AC_SL1500_.jpg"
                 />
-            </div>
-            <div className="home__row">
                 <Product
                     id="4903850"
-                    title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
+                    title={strings.product_4903850}
                     price={199.99}
                     rating={3}
                     image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
                 />
+            </div>
+            <div className="home__row">
                 <Product
                     id="23445930"
-                    title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
+                    title={strings.product_23445930}
                     price={98.99}
                     rating={5}
                     image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
                 />
                 <Product
                     id="3254354345"
-                    title="New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)"
+                    title={strings.product_3254354345}
                     price={598.99}
                     rating={4}
                     image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
@@ -57,7 +61,7 @@ function Home() {
             <div className="home__row">
                 <Product
                     id="90829332"
-                    title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor -  Super Ultra Wide Dual WQHD 5120 x1440"
+                    title={strings.product_90829332}
                     price={1094.98}
                     rating={4}
                     image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
