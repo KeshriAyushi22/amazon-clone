@@ -1,10 +1,28 @@
 import React from 'react'
 import "./Product.css"
+import { useStateValue } from '../context/StateProvider'
 
 function Product(props) {
+
+    //Similar like useState , dispatch will work for setting the data
+    const [state, dispatch] = useStateValue();
+    const addToBasket = () => {
+        //dispatch(send) the item to data Layer
+        dispatch({
+            type: 'ADD_TO_BASKET',
+            item: {
+                id: props.id,
+                title: props.title,
+                price: props.price,
+                image: props.image,
+                rating: props.rating
+            }
+        })
+    }
+
     return (
         <div className='product'>
-            <div className="product__info">
+            <div className="product__info" id={props.id}>
                 <p>{props.title}</p>
                 <p className="product__price">
                     <small>$</small>
@@ -16,7 +34,7 @@ function Product(props) {
 
             </div>
             <img src={props.image} />
-            <button className="btn">Add to Basket</button>
+            <button className="btn" onClick={addToBasket}>Add to Basket</button>
         </div>
     )
 }

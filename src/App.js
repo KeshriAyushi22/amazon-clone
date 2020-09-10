@@ -5,6 +5,7 @@ import Home from "./component/Home";
 import CheckOut from "./component/CheckOut"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
+
 function App() {
   return (
     <Router>

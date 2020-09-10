@@ -14,7 +14,7 @@ function Home() {
             <div className="home__container">
                 <Carousel autoPlay navButtonsAlwaysVisible={false} timeout={1000} indicators={false} animation="slide">
                     {
-                        list.map((item, i) => <img src={item} className="home__image" />)
+                        list.map((item, i) => <img src={item} key={i} className="home__image" />)
                     }
                 </Carousel>
             </div>
