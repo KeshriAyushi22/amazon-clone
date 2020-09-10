@@ -12,7 +12,12 @@ const intl = {
         "product_49538094": "Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl",
         "product_4903850": "Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor",
         "product_3254354345": "New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)",
-        "product_90829332": "Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor -  Super Ultra Wide Dual WQHD 5120 x1440"
+        "product_90829332": "Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor -  Super Ultra Wide Dual WQHD 5120 x1440",
+        "checkout": "Your Checkout Basket",
+        "proceed_pay": "Proceed to Checkout",
+        "gift": "This order conatins a gift",
+        "subtotal": "SubTotal",
+        "item": "items"
     },
     hin: {
         "hello": 'हैलो',
@@ -27,7 +32,12 @@ const intl = {
         "product_49538094": "बेकिंग के लिए केनवुड केमिक्स स्टैंड मिक्सर, के-बीटर, आटा हुक और व्हिस्क के साथ स्टाइलिश किचन मिक्सर, 5 लीटर ग्लास बाउल",
         "product_4903850": "सैमसंग LC49RG90SSUXEN 49 'घुमावदार एलईडी गेमिंग मॉनिटर",
         "product_3254354345": "नया Apple iPad Pro (12.9 इंच, वाई-फाई, 128 जीबी) - सिल्वर (4th जनरेशन)",
-        "product_90829332": "सैमसंग LC49RG90SSUXEN 49 'कर्व्ड एलईडी गेमिंग मॉनिटर - सुपर अल्ट्रा वाइड ड्यूल WQHD 5120 x1440"
+        "product_90829332": "सैमसंग LC49RG90SSUXEN 49 'कर्व्ड एलईडी गेमिंग मॉनिटर - सुपर अल्ट्रा वाइड ड्यूल WQHD 5120 x1440",
+        "checkout": "आपका चेकआउट बास्केट",
+        "gift": "यह आदेश एक उपहार को जीतता है",
+        "subtotal": "सबटोटल",
+        "item": "आइटम",
+        "proceed_pay": "चुकाने के लिए आगे बढ़ना शुरू करो",
 
 
     },

@@ -5,10 +5,14 @@ import { list } from '../utils/ImageList'
 import Product from "./Product"
 import LocalizedStrings from 'react-localization';
 import { intl } from '../utils/localised'
+import { useStateValue } from '../context/StateProvider'
 
 function Home() {
     let strings = new LocalizedStrings(intl)
-    strings.setLanguage("en");
+    const [state, dispatch] = useStateValue();
+
+    strings.setLanguage(state.lang);
+
     return (
         <div className="home">
             <div className="home__container">
@@ -22,7 +26,7 @@ function Home() {
                 <Product
                     id="12321341"
                     title={strings.product_12321341}
-                    price="29.99"
+                    price={29.99}
                     rating={5}
                     image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
                 />
@@ -30,7 +34,7 @@ function Home() {
                 <Product
                     id="49538094"
                     title={strings.product_49538094}
-                    price="239.0"
+                    price={239.0}
                     rating={4}
                     image="https://images-na.ssl-images-amazon.com/images/I/91gRKbX%2BS8L._AC_SL1500_.jpg"
                 />

@@ -2,38 +2,39 @@ import React from "react";
 import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../context/StateProvider";
+import LocalizedStrings from "react-localization";
+import { intl } from '../utils/localised'
+import { getBasketTotal } from "../context/reducer";
 
 function SubTotal() {
 
-    const [{ basket }, dispatch] = useStateValue();
-
-    const getBasketTotal = () => {
-        console.log(basket)
-        //need to read the item
-    }
+    const [{ basket, lang }, dispatch] = useStateValue();
+    let strings = new LocalizedStrings(intl)
+    strings.setLanguage(lang);
 
 
     return (
         <div className="subtotal">
             <CurrencyFormat
                 renderText={(value) => (
-                    <>
+                    <>{console.log(value)}
                         <p>
-                            Subtotal ({basket} items) :<strong>{`${value}`}</strong>
-                            <small className="subtotal__gift">
-                                <input type="checkbox" />
-                                This order conatins a gift
-                            </small>
+                            {strings.subtotal} ({basket?.length} {strings.item}) :<strong>{value}</strong>
                         </p>
+                        <small className="subtotal__gift">
+                            <input type="checkbox" />
+                            {strings.gift}
+                        </small>
+
                     </>
                 )}
                 decimalScale={2}
-                value={() => getBasketTotal(basket)}
+                value={getBasketTotal(basket)}
                 displayType={"text"}
                 thousandSeparator={true}
                 prefix={"$"}  //need to fetch it accordingly
             />
-            <button>Proceed to Checkout</button>
+            <button>{strings.proceed_pay}</button>
         </div>
     );
 }

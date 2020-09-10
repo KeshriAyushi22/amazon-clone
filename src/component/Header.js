@@ -10,17 +10,23 @@ import { Link } from 'react-router-dom'
 import { dropDown } from "../utils/MaterialUtil"
 import { langItem } from '../utils/CommonUtil'
 import "./Header.css"
+import { useStateValue } from '../context/StateProvider';
 
 
 function Header() {
-    //need to make it on context api
-    const [lang, setLang] = useState('hin');
-    console.log(lang);
+
+    const [state, dispatch] = useStateValue();
+
+    console.log(state)
+    const setLanguage = (ln) => {
+        dispatch({
+            type: "CHANGE_LANG",
+            lang: ln
+        })
+    }
 
     let strings = new LocalizedStrings(intl)
-    strings.setLanguage(lang);
-    console.log(strings)
-
+    strings.setLanguage(state.lang);
 
     return (
         <div className="header">
@@ -36,7 +42,7 @@ function Header() {
 
             <div className="header__optionFlag">
                 <Flag code={'IN'} className="country__flag" />
-                {dropDown("ln", "lang", lang, langItem, e => setLang(e.target.value))}
+                {dropDown("ln", "lang", state.lang, langItem, e => setLanguage(e.target.value))}
             </div>
 
             <div className="header__nav">
@@ -57,7 +63,7 @@ function Header() {
                         <ShoppingCart fontSize="large" />
                     </Link>
                     <div className="header__option">
-                        <span className="header__optionOne header__basketCount">0</span>
+                        <span className="header__optionOne header__basketCount">{state.basket?.length}</span>
                         <span className="header__optionTwo">{strings.cart}</span>
 
                     </div>
