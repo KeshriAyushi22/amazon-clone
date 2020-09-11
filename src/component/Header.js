@@ -11,6 +11,7 @@ import { dropDown } from "../utils/MaterialUtil"
 import { langItem } from '../utils/CommonUtil'
 import "./Header.css"
 import { useStateValue } from '../context/StateProvider';
+import { auth } from '../firebase';
 
 
 function Header() {
@@ -28,9 +29,17 @@ function Header() {
     let strings = new LocalizedStrings(intl)
     strings.setLanguage(state.lang);
 
+    const handleAuthentication = () => {
+        console.log(state.user)
+        if (state.user) {
+            auth.signOut();
+        }
+    }
+
     return (
         <div className="header">
-            <Link to="/">
+
+            <Link to={"/"}>
                 <img src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
                     className="header__logo" />
             </Link>
@@ -46,10 +55,12 @@ function Header() {
             </div>
 
             <div className="header__nav">
-                <Link to="/login">
-                    <div className="header__option">
-                        <span className="header__optionOne">{strings.hello}, Guest</span>
-                        <span className="header__optionTwo">{strings.signIn}</span>
+                {/* if no user then only redirect to login page */}
+                <Link to={!state.user && '/login'}>
+                    <div onClick={handleAuthentication}
+                        className="header__option">
+                        <span className="header__optionOne">{strings.hello}, {state.user ? state.user.email : 'Guest'}</span>
+                        <span className="header__optionTwo">{state.user ? "Sign Out" : strings.signIn}</span>
                     </div>
                 </Link>
                 <div className="header__option">
