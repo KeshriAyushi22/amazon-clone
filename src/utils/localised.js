@@ -13,7 +13,7 @@ const intl = {
         "product_4903850": "Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor",
         "product_3254354345": "New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)",
         "product_90829332": "Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor -  Super Ultra Wide Dual WQHD 5120 x1440",
-        "checkout": "Your Checkout Basket",
+        "checkout": "Your Shopping Basket",
         "proceed_pay": "Proceed to Checkout",
         "gift": "This order conatins a gift",
         "subtotal": "SubTotal",

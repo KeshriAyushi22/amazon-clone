@@ -8,7 +8,7 @@ import { intl } from '../utils/localised';
 const CheckoutProduct = forwardRef(
     ({ id, image, title, price, rating }, ref) => {
 
-        const [{ basket, lang }, dispatch] = useStateValue();
+        const [{ }, dispatch] = useStateValue();
 
 
         const removeFromBasket = () => {
@@ -22,6 +22,7 @@ const CheckoutProduct = forwardRef(
             <div ref={ref} className="checkoutProduct">
                 <img className="checkoutProduct__image" src={image} />
                 <div className="checkoutProduct__info">
+
                     <p className="checkoutProduct__title">{title}</p>
                     <p className="checkoutProduct__price">
                         <small>$</small>
@@ -29,7 +30,7 @@ const CheckoutProduct = forwardRef(
                     </p>
 
                     <div className="checkoutProduct__rating">
-                        {Array(rating).fill().map((_, i) => <p>star  </p>)}
+                        {Array(rating).fill().map((_, i) => <p>⭐</p>)}
                     </div>
 
                     <button onClick={removeFromBasket}>Remove from basket</button>

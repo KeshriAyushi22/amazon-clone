@@ -41,4 +41,6 @@
 
 .product > button:hover {
   transform: scale(1.2);
+  cursor: pointer;
+  outline: none;
 }

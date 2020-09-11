@@ -29,5 +29,7 @@
   height: 30px;
 }
 .subtotal > button:hover {
-  transform: scale(1.2);
+  transform: scale(1);
+  cursor: pointer;
+  outline: none;
 }

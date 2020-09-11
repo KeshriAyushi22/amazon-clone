@@ -30,7 +30,7 @@ function Product(props) {
                     <strong>{props.price}</strong>
                 </p>
                 <div className="product__rating">
-                    {Array(props.rating).fill().map((_, i) => (<p>star</p>))}
+                    {Array(props.rating).fill().map((_, i) => (<p>⭐</p>))}
                 </div>
 
             </div>

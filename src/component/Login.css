@@ -62,6 +62,8 @@
   border-radius: 2px;
 }
 
-.login__registerButton > button:hover .login__signInButton > button:hover {
+.login__registerButton:hover .login__signInButton:hover {
   transform: scale(1.2);
+  cursor: pointer;
+  outline: none;
 }

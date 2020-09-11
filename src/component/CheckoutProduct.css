@@ -17,6 +17,8 @@
 
 .checkoutProduct__info > button:hover {
   transform: scale(1.2);
+  cursor: pointer;
+  outline: none;
 }
 
 .checkoutProduct__image {
