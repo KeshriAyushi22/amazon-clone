@@ -5,12 +5,15 @@ import { useStateValue } from "../context/StateProvider";
 import LocalizedStrings from "react-localization";
 import { intl } from '../utils/localised'
 import { getBasketTotal } from "../context/reducer";
+import { useHistory } from 'react-router-dom'
 
 function SubTotal() {
 
     const [{ basket, lang }, dispatch] = useStateValue();
     let strings = new LocalizedStrings(intl)
     strings.setLanguage(lang);
+
+    const history = useHistory();
 
 
     return (
@@ -23,7 +26,7 @@ function SubTotal() {
                         </p>
                         <small className="subtotal__gift">
                             <input type="checkbox" />
-                            {strings.gift}
+                            {strings.gift} 🎁
                         </small>
 
                     </>
@@ -34,7 +37,7 @@ function SubTotal() {
                 thousandSeparator={true}
                 prefix={"$"}  //need to fetch it accordingly
             />
-            <button>{strings.proceed_pay}</button>
+            <button onClick={e => history.push('/payment')}>{strings.proceed_pay}</button>
         </div>
     );
 }

@@ -50,6 +50,7 @@
   width: 100%;
   margin-top: 10px;
   border-radius: 2px;
+  outline: none;
 }
 
 .login__registerButton {
@@ -60,6 +61,7 @@
   width: 100%;
   margin-top: 10px;
   border-radius: 2px;
+  outline: none;
 }
 
 .login__registerButton:hover .login__signInButton:hover {

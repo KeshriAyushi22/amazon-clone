@@ -5,6 +5,10 @@
   max-width: 1500px;
   max-height: 350px;
 }
+
+.home__container > .jss1 {
+  width: 100% !important;
+}
 .home__row {
   display: flex;
   z-index: 1;

@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import "slick-carousel/slick/slick.css";
 import { auth } from './firebase';
 import { useStateValue } from './context/StateProvider';
+import Payment from './component/Payment';
 
 function App() {
 
@@ -43,6 +44,10 @@ function App() {
           <Route exact path="/">
             <Header />
             <Home />
+          </Route>
+          <Route exact path="/payment">
+            <Header />
+            <Payment />
           </Route>
           <Route exact path="/checkout">
             <Header />
