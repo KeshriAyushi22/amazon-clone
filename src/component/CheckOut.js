@@ -5,6 +5,7 @@ import LocalizedStrings from "react-localization";
 import { intl } from '../utils/localised'
 import { useStateValue } from '../context/StateProvider';
 import CheckoutProduct from './CheckoutProduct';
+import FlipMove from 'react-flip-move';
 
 function CheckOut() {
     const [{ basket, lang }, dispatch] = useStateValue();
@@ -18,15 +19,18 @@ function CheckOut() {
                     src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg" />
                 <div>
                     <h2 className="checkout__title">{strings.checkout}</h2>
-                    {basket.map(item => (
-                        <CheckoutProduct
-                            id={item.id}
-                            image={item.image}
-                            title={item.title}
-                            price={item.price}
-                            rating={item.rating}
+                    <FlipMove>
+                        {basket.map(item => (
+                            <CheckoutProduct
+                                key={item.id}
+                                id={item.id}
+                                image={item.image}
+                                title={item.title}
+                                price={item.price}
+                                rating={item.rating}
 
-                        />))}
+                            />))}
+                    </FlipMove>
                 </div>
             </div>
             <div className="checkout__right">

@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactImageMagnify from 'ReactImageMagnify';
 import "./Product.css"
 import { useStateValue } from '../context/StateProvider'
 
@@ -35,25 +34,7 @@ function Product(props) {
                 </div>
 
             </div>
-            <ReactImageMagnify className="product__image"
-                {...{
-                    smallImage: {
-                        alt: 'Product Image',
-                        isFluidWidth: true,
-                        src: src.small,
-                        srcSet: props.image,
-                        sizes: '(max-width: 480px) 100vw, (max-width: 1200px) 30vw, 360px'
-                    },
-                    largeImage: {
-                        src: src.large,
-                        width: 1426,
-                        height: 2000
-                    },
-                    lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' }
-                }}
-
-            />
-            {/* <img src={props.image} /> */}
+            <img src={props.image} />
             <button className="btn" onClick={addToBasket}>Add to Basket</button>
         </div>
     )
