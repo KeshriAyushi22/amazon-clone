@@ -15,3 +15,8 @@ make a build after that
 firebase deploy
 
 done!
+
+## stripe for payment
+
+@stripe/stripe-js
+@stripe/react-stripe-js

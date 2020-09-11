@@ -9,6 +9,13 @@ import "slick-carousel/slick/slick.css";
 import { auth } from './firebase';
 import { useStateValue } from './context/StateProvider';
 import Payment from './component/Payment';
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
+
+
+const promise = loadStripe('pk_test_51HQDUGBsrjx0tjIDa0SdtYbfWZywH6g35CucNg5jatTX6ufoz7I1HvPn1bDjJwLJy6MLm1ZiPzjjCG2g4eroVYlP00zJcWLF2C');
+
+
 
 function App() {
 
@@ -47,7 +54,9 @@ function App() {
           </Route>
           <Route exact path="/payment">
             <Header />
-            <Payment />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
           </Route>
           <Route exact path="/checkout">
             <Header />

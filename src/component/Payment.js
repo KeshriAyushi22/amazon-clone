@@ -1,13 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Payment.css"
 import { useStateValue } from "../context/StateProvider"
 import CheckoutProduct from './CheckoutProduct';
 import { Link } from 'react-router-dom';
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 
 
 function Payment() {
 
     const [{ user, basket }, dispatch] = useStateValue();
+    const [error, setError] = useState(null)
+    const [disabled, setDisabled] = useState(null)
+
+    //for card payment system
+    const stripe = useStripe();
+    const elemnts = useElements();
+
+    const handleSubmit = () => {
+
+    }
+
+    const handleChange = (event) => {
+        //Listen for change in card element
+        //and display any error as the customer types in their detail
+        setDisabled(event.empty)
+        setError(event.error ? event.error.message : "")
+    }
 
     return (
         <div className="payment">
@@ -56,6 +74,9 @@ function Payment() {
                     </div>
                     <div className="payment__details">
                         {/* stripe for payment */}
+                        <form onSubmit={handleSubmit}>
+                            <CardElement onChange={handleChange} />
+                        </form>
                     </div>
 
                 </div>
