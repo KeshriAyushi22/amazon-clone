@@ -46,10 +46,12 @@ function Header() {
             </div>
 
             <div className="header__nav">
-                <div className="header__option">
-                    <span className="header__optionOne">{strings.hello}, Guest</span>
-                    <span className="header__optionTwo">{strings.signIn}</span>
-                </div>
+                <Link to="/login">
+                    <div className="header__option">
+                        <span className="header__optionOne">{strings.hello}, Guest</span>
+                        <span className="header__optionTwo">{strings.signIn}</span>
+                    </div>
+                </Link>
                 <div className="header__option">
                     <span className="header__optionOne">{strings.rewards}</span>
                     <span className="header__optionTwo">{strings.orders}</span>
