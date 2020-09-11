@@ -10,3 +10,4 @@ export const list = [
     '/img/sell-clothes-online-2.jpg'
 
 ]
+
