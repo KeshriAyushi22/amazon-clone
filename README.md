@@ -28,5 +28,8 @@ select the cloud option
 select javascript as language and set eslint and dependencies to yes.
 you will get a function folder which is all the backend.
 
-
 ## BACKEND STEPS:
+
+set up every thing in index.js of function folder.
+start the emulator using cmd as firebase emulators:start (its like running the local server without hoisting just like in java using apache server.)
+http://localhost:5001/clone-b6acf/us-central1/api -> this url will show u the result
