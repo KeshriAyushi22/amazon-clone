@@ -53,7 +53,7 @@ function Product(props) {
 
     return (
         <>
-            <div className='product'>
+            <div className='product card'>
                 <div className="product__info" id={props.id}>
                     <p>{props.title}</p>
                     <p className="product__price">

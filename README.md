@@ -20,3 +20,13 @@ done!
 
 @stripe/stripe-js
 @stripe/react-stripe-js
+
+## for backend stuff
+
+firebase init
+select the cloud option
+select javascript as language and set eslint and dependencies to yes.
+you will get a function folder which is all the backend.
+
+
+## BACKEND STEPS:

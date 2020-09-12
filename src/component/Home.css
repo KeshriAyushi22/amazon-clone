@@ -15,6 +15,12 @@
   margin: 0 5px;
 }
 
+.home_row:hover {
+  filter: blur(20px);
+  transform: scale(0.9);
+  opacity: 0.5;
+}
+
 .home__image {
   width: 100%;
   z-index: -1;

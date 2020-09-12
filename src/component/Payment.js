@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import { getBasketTotal } from '../context/reducer';
 import CurrencyFormat from 'react-currency-format';
-import Axios from 'axios';
+import axios from '../axios';
 
 
 function Payment() {
@@ -27,7 +27,7 @@ function Payment() {
     useEffect(() => {
         //generate the special stripe secret which allows us to charge cutomer and as cart changes reload this effect
         const getClientSecret = async () => {
-            const response = await Axios({
+            const response = await axios({
                 method: 'post',
                 //stripe expect you a total in currency subunits so * by 100
                 url: '/payments/create?total=${ getBasketTotal(basket) *100}'
