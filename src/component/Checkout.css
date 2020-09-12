@@ -20,3 +20,9 @@
 
 .checkout__right {
 }
+
+@media only screen and (max-width: 600px) {
+  .checkout {
+    display: block;
+  }
+}
