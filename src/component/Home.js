@@ -7,9 +7,6 @@ import Product from "./Product"
 import LocalizedStrings from 'react-localization';
 import { intl } from '../utils/localised'
 import { useStateValue } from '../context/StateProvider'
-import SliderDiv from './SliderDiv';
-import watchImg687 from '../img/wristwatch_200.jpg'
-import watchImg1200 from '../img/wristwatch_1200.jpg'
 import Backdrop from '@material-ui/core/Backdrop';
 import ReactImageMagnify from 'react-image-magnify'
 
@@ -74,7 +71,7 @@ function Home() {
             <div className="home__row">
 
                 <div className="home__heading">
-                    <h3>Top Trending Deals</h3>
+                    <h3>{strings.Deals}</h3>
 
                     <div className="home__dealSection">
 
@@ -82,22 +79,22 @@ function Home() {
                         <div className="home__card">
                             <img src="/img/shoe.jpg" />
                             <div class="overlay"></div>
-                            <button className="home__dealBtn" onClick={e => onClick(e, "9000")}> Quick Look</button>
+                            <button className="home__dealBtn" onClick={e => onClick(e, "9000")}> {strings.Quick_Look}</button>
                         </div>
                         <div className="home__card">
                             <img src="/img/bag.jpg" />
                             <div class="overlay"></div>
-                            <button className="home__dealBtn" onClick={e => onClick(e, "9001")}> Quick Look</button>
+                            <button className="home__dealBtn" onClick={e => onClick(e, "9001")}> {strings.Quick_Look}</button>
                         </div>
                         <div className="home__card">
                             <img src="/img/tshirt.jpg" />
                             <div class="overlay"></div>
-                            <button className="home__dealBtn" onClick={e => onClick(e, "9002")}> Quick Look</button>
+                            <button className="home__dealBtn" onClick={e => onClick(e, "9002")}> {strings.Quick_Look}</button>
                         </div>
                         <div className="home__card">
                             <img src="/img/dslr1.jpg" />
                             <div class="overlay"></div>
-                            <button className="home__dealBtn" onClick={e => onClick(e, "9003")}> Quick Look</button>
+                            <button className="home__dealBtn" onClick={e => onClick(e, "9003")}>{strings.Quick_Look}</button>
                         </div>
                         <Backdrop open={open} onClick={e => setOpen(false)} style={{ zIndex: "2" }}>
                             <div className="home__backdropDetail">

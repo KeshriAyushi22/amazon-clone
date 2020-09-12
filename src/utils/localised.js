@@ -17,7 +17,17 @@ const intl = {
         "proceed_pay": "Proceed to Checkout",
         "gift": "This order conatins a gift",
         "subtotal": "SubTotal",
-        "item": "items"
+        "item": "items",
+        "Quick_Look": "Quick Look",
+        "Deals": "Top Trending Deals",
+        "Your_Orders": "Your Orders",
+        "checkout_thing": "Checkout",
+        "address": "Delivery Address",
+        "Delivery": "Review items and Delivery",
+        "Payment_Method": "Payment Method",
+        "Order_Total": "Order Total",
+        "Processing": "Processing",
+        "Buy_Now": "Buy Now"
     },
     hin: {
         "hello": 'हैलो',
@@ -38,6 +48,16 @@ const intl = {
         "subtotal": "सबटोटल",
         "item": "आइटम",
         "proceed_pay": "चुकाने के लिए आगे बढ़ना शुरू करो",
+        "Quick_Look": "त्वरित देखो",
+        "Deals": "टॉप ट्रेंडिंग डील्स",
+        "Your_Orders": "तुम्हारे ऑर्डर",
+        "checkout_thing": "चेक आउट",
+        "address": "डिलिवरी का पता",
+        "Delivery": "वस्तुओं और वितरण की समीक्षा करें",
+        "Payment_Method": "भुगतान का तरीका",
+        "Order_Total": "कुल आदेश",
+        "Processing": "प्रसंस्करण",
+        "Buy_Now": "अभी खरीदें"
 
 
     },

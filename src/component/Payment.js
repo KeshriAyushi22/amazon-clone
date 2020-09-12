@@ -8,15 +8,19 @@ import { getBasketTotal } from '../context/reducer';
 import CurrencyFormat from 'react-currency-format';
 import axios from '../axios';
 import { db } from "../firebase"
-
+import LocalizedStrings from 'react-localization';
+import { intl } from '../utils/localised'
 
 function Payment() {
 
-    const [{ user, basket }, dispatch] = useStateValue();
+    const [{ user, basket, lang }, dispatch] = useStateValue();
     const [error, setError] = useState(null)
     const [disabled, setDisabled] = useState(null)
     const [succeeded, setSucceeded] = useState(null)
     const [processing, setProcessing] = useState(null)
+
+    let strings = new LocalizedStrings(intl)
+    strings.setLanguage(lang);
 
     //for card payment system
     const stripe = useStripe();
@@ -92,12 +96,12 @@ function Payment() {
         <div className="payment">
             <div className="payment__container">
                 <h1>
-                    Checkout(<Link to="/checkout">{basket?.length} items</Link>)
+                    {strings.checkout_thing}(<Link to="/checkout">{basket?.length} {strings.item}</Link>)
                 </h1>
                 {/* payment address */}
                 <div className="payment__section">
                     <div className="payment__title">
-                        <h3>Delivery Address</h3>
+                        <h3>{strings.address}</h3>
                     </div>
                     <div className="payment__address">
                         <p>{user?.email}</p>
@@ -109,7 +113,7 @@ function Payment() {
                 {/* items list */}
                 <div className="payment__section">
                     <div className="payment__title">
-                        <h3>Review items and Delivery</h3>
+                        <h3>{strings.Delivery}</h3>
                     </div>
                     <div className="payment__items">
                         {/* all the product */}
@@ -131,7 +135,7 @@ function Payment() {
                 {/* payment method */}
                 <div className="payment__section">
                     <div className="payment__title">
-                        <h3>Payment Method</h3>
+                        <h3>{strings.Payment_Method}</h3>
                     </div>
                     <div className="payment__details">
                         {/* stripe for payment */}
@@ -140,16 +144,16 @@ function Payment() {
                             <div className="payment__priceContainer">
                                 <CurrencyFormat
                                     renderText={(value) => (
-                                        <h3>Order Total : {value}</h3>
+                                        <h3>{strings.Order_Total} : {value}</h3>
                                     )}
                                     decimalScale={2}
                                     value={getBasketTotal(basket)}
                                     displayType={"text"}
                                     thousandSeparator={true}
-                                    prefix={"$"}
+                                    prefix={"₹"}
                                 />
                                 <button disabled={processing || disabled || succeeded}>
-                                    <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                                    <span>{processing ? <p>{strings.Processing}</p> : "Buy Now"}</span>
                                 </button>
                             </div>
                             {error && <div>{error}</div>}

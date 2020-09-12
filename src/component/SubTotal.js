@@ -35,7 +35,7 @@ function SubTotal() {
                 value={getBasketTotal(basket)}
                 displayType={"text"}
                 thousandSeparator={true}
-                prefix={"$"}  //need to fetch it accordingly
+                prefix={"₹"}  //need to fetch it accordingly
             />
             <button onClick={e => history.push('/payment')}>{strings.proceed_pay}</button>
         </div>

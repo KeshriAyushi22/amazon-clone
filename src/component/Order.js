@@ -3,10 +3,14 @@ import "./Order.css"
 import { db } from "../firebase"
 import { useStateValue } from '../context/StateProvider';
 import ShowOrder from './ShowOrder';
+import LocalizedStrings from 'react-localization';
+import { intl } from '../utils/localised'
 
 function Order() {
     const [orders, setOrders] = useState();
-    const [{ user, basket }, dispatch] = useStateValue();
+    const [{ user, basket, lang }, dispatch] = useStateValue();
+    let strings = new LocalizedStrings(intl)
+    strings.setLanguage(lang);
 
     useEffect(() => {
 
@@ -41,7 +45,7 @@ function Order() {
 
         <div className="order">
             {console.log(orders)}
-            <h1>Your Orders</h1>
+            <h1>{LocalizedStrings.Your_Orders}</h1>
             <div className="orders_order">
                 {orders?.map(order =>
                     <ShowOrder order={order} />

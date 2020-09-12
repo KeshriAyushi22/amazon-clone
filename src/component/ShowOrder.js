@@ -37,7 +37,7 @@ function ShowOrder({ order }) {
                 value={order.data.amount / 100}  //since it was in cents we are diving it here
                 displayType={"text"}
                 thousandSeparator={true}
-                prefix={"$"}  //need to fetch it accordingly
+                prefix={"₹"}  //need to fetch it accordingly
             />
         </div>
     )
