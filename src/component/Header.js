@@ -63,10 +63,12 @@ function Header() {
                         <span className="header__optionTwo">{state.user ? "Sign Out" : strings.signIn}</span>
                     </div>
                 </Link>
-                <div className="header__option">
-                    <span className="header__optionOne">{strings.rewards}</span>
-                    <span className="header__optionTwo">{strings.orders}</span>
-                </div>
+                <Link to="/orders">
+                    <div className="header__option">
+                        <span className="header__optionOne">{strings.rewards}</span>
+                        <span className="header__optionTwo">{strings.orders}</span>
+                    </div>
+                </Link>
                 <div className="header__option">
                     <span className="header__optionOne">{strings.your}</span>
                     <span className="header__optionTwo">{strings.prime}</span>
