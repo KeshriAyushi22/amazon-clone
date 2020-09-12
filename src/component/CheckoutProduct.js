@@ -6,7 +6,7 @@ import { intl } from '../utils/localised';
 
 
 const CheckoutProduct = forwardRef(
-    ({ id, image, title, price, rating }, ref) => {
+    ({ id, image, title, price, rating, hideButton }, ref) => {
 
         const [{ }, dispatch] = useStateValue();
 
@@ -32,8 +32,8 @@ const CheckoutProduct = forwardRef(
                     <div className="checkoutProduct__rating">
                         {Array(rating).fill().map((_, i) => <p>⭐</p>)}
                     </div>
+                    {!hideButton && (<button onClick={removeFromBasket}>Remove from basket</button>)}
 
-                    <button onClick={removeFromBasket}>Remove from basket</button>
                 </div>
             </div>
         )
