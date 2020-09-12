@@ -26,6 +26,12 @@ const reducer = (state, action) => {
                 lang: action.lang
             };
 
+        case 'EMPTY_BASKET':
+            return{
+                ...state,
+                basket:[]
+            }    
+
         case 'REMOVE_FROM_BASKET':
             const index = state.basket.findIndex(  //finding the first matching index
                 (basketItem) => basketItem.id === action.id

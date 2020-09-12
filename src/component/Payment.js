@@ -30,7 +30,7 @@ function Payment() {
             const response = await axios({
                 method: 'post',
                 //stripe expect you a total in currency subunits so * by 100
-                url: '/payments/create?total=${ getBasketTotal(basket) *100}'
+                url: `/payments/create?total=${getBasketTotal(basket) * 100}`
             })
             setClientSecret(response.data.clientSecret)
         }
@@ -57,6 +57,11 @@ function Payment() {
             setSucceeded(true)
             setError(null)
             setProcessing(false)
+
+            //remove all the items in basket after the payment is success
+            dispatch({
+                type:"EMPTY_BASKET"
+            })
             history.replace('/orders')
         })
     }
