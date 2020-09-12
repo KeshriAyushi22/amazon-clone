@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 
 export default class SliderDiv extends Component {
     render() {
@@ -16,7 +15,7 @@ export default class SliderDiv extends Component {
         return (
             <div>
                 <h2>Center Mode</h2>
-                <Slider {...settings}>
+                <Slider {...settings} style={{ height: "200px" }}>
                     <div style={{ backgroundColor: "blue" }}>
                         <h3>1</h3>
                     </div>
@@ -29,14 +28,9 @@ export default class SliderDiv extends Component {
                     <div>
                         <h3>4</h3>
                     </div>
-                    <div>
-                        <h3>5</h3>
-                    </div>
-                    <div>
-                        <h3>6</h3>
-                    </div>
+
                 </Slider>
-            </div>
+            </div >
         );
     }
 }

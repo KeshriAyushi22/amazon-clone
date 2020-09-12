@@ -14,19 +14,6 @@
   flex-wrap: wrap;
 }
 
-.card {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
-}
-
-.product:hover {
-  filter: blur(0px);
-  transform: scale(1.1);
-  opacity: 1;
-}
-
 .product > img {
   max-height: 200px;
   width: 100%;

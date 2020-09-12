@@ -15,12 +15,6 @@
   margin: 0 5px;
 }
 
-.home_row:hover {
-  filter: blur(20px);
-  transform: scale(0.9);
-  opacity: 0.5;
-}
-
 .home__image {
   width: 100%;
   z-index: -1;
@@ -32,4 +26,101 @@
 .Carousel-root-1 {
   width: 100%;
   height: 478px;
+}
+
+.home__heading {
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px;
+  width: 98%;
+  background-color: white;
+}
+
+.home__dealSection {
+  height: 250px;
+  padding: 20px;
+  margin: 10px;
+  max-height: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home__card {
+  position: relative;
+  height: 272px;
+  width: fit-content;
+  padding: 4px;
+  width: 300px;
+}
+
+.home__card > img {
+  max-height: 267px;
+  margin: 0 10px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+.home__dealBtn {
+  opacity: 0;
+  width: 100px;
+  position: absolute;
+  outline: none;
+  margin-top: 10px;
+  top: 75%;
+  left: 35%;
+  height: 35px;
+  border-radius: 99px;
+  border: none;
+  border: solid 2px black;
+  background: rgba(255, 255, 255, 0);
+  transition: opacity 0.35s ease;
+  text-align: center;
+}
+
+.home__dealBtn:hover {
+  display: block;
+  cursor: pointer;
+  transform: scale(1.1);
+  background: black;
+  color: white;
+  z-index: 1;
+}
+
+/* home card hover show overlay and button */
+.home__card:hover .home__dealBtn {
+  opacity: 1;
+}
+.home__card:hover .overlay {
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.home__backdropDetail {
+  display: flex;
+  width: 600px;
+}
+
+.home__backdropDetailImg {
+  height: 400px !important;
+  flex: 1;
+}
+
+.home__backdropDetail > .product {
+  flex: 0.4 1;
+  height: 359px;
+  margin: 0;
+}
+
+.home__backdropDetail > .product > .product__info {
+  height: 0px !important;
 }

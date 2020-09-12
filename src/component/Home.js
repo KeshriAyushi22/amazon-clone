@@ -1,18 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import Carousel from 'react-material-ui-carousel'
 import { list } from '../utils/ImageList'
+import { imageObject } from "../utils/CommonUtil"
 import Product from "./Product"
 import LocalizedStrings from 'react-localization';
 import { intl } from '../utils/localised'
 import { useStateValue } from '../context/StateProvider'
-// import SliderDiv from './SliderDiv';
+import SliderDiv from './SliderDiv';
+import watchImg687 from '../img/wristwatch_200.jpg'
+import watchImg1200 from '../img/wristwatch_1200.jpg'
+import Backdrop from '@material-ui/core/Backdrop';
+import ReactImageMagnify from 'react-image-magnify'
 
 function Home() {
     let strings = new LocalizedStrings(intl)
     const [state, dispatch] = useStateValue();
 
     strings.setLanguage(state.lang);
+
+    const [open, setOpen] = useState(false);
+    const [initialProduct, setInitialPrdouct] = useState({});
+
+    const onClick = (e, selectedId) => {
+        //pass product id and fetch the data from the basket
+        imageObject.map(item => {
+            if (item.id === selectedId) {
+                console.log(item);
+                setInitialPrdouct(item);
+            }
+        })
+
+
+        setOpen(true);
+    }
 
 
     return (
@@ -50,11 +71,71 @@ function Home() {
                 />
 
             </div>
-            {/* <div className="home__row">
-                     carousel 
-                    <SliderDiv />
+            <div className="home__row">
 
-                </div> */}
+                <div className="home__heading">
+                    <h3>Top Trending Deal's</h3>
+
+                    <div className="home__dealSection">
+
+
+                        <div className="home__card">
+                            <img src="/img/shoe.jpg" />
+                            <div class="overlay"></div>
+                            <button className="home__dealBtn" onClick={e => onClick(e, "9000")}> Quick Look</button>
+                        </div>
+                        <div className="home__card">
+                            <img src="/img/bag.jpg" />
+                            <div class="overlay"></div>
+                            <button className="home__dealBtn" onClick={e => onClick(e, "9001")}> Quick Look</button>
+                        </div>
+                        <div className="home__card">
+                            <img src="/img/tshirt.jpg" />
+                            <div class="overlay"></div>
+                            <button className="home__dealBtn" onClick={e => onClick(e, "9002")}> Quick Look</button>
+                        </div>
+                        <div className="home__card">
+                            <img src="/img/dslr1.jpg" />
+                            <div class="overlay"></div>
+                            <button className="home__dealBtn" onClick={e => onClick(e, "9003")}> Quick Look</button>
+                        </div>
+                        <Backdrop open={open} onClick={e => setOpen(false)} style={{ zIndex: "2" }}>
+                            <div className="home__backdropDetail">
+                                <Product
+                                    id={initialProduct.id}
+                                    title={initialProduct.title}
+                                    price={initialProduct.price}
+                                    rating={initialProduct.rating}
+                                    image={""}
+                                />
+                                <ReactImageMagnify
+                                    {...{
+                                        smallImage: {
+                                            alt: 'Product Image',
+                                            isFluidWidth: true,
+                                            src: initialProduct.image,
+
+                                        },
+                                        largeImage: {
+                                            src: initialProduct.image,
+                                            width: 1200,
+                                            height: 1800
+                                        },
+                                        lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' },
+                                        shouldUsePositiveSpaceLens: true,
+                                        imageClassName: "home__backdropDetailImg"
+                                    }}
+
+                                />
+
+                            </div>
+                        </Backdrop>
+
+                    </div>
+
+                </div>
+
+            </div>
             <div className="home__row">
                 <Product
                     id="23445930"
