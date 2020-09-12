@@ -106,7 +106,7 @@ function Home() {
                                     title={initialProduct.title}
                                     price={initialProduct.price}
                                     rating={initialProduct.rating}
-                                    image={""}
+                                    image={initialProduct.image}
                                 />
                                 <ReactImageMagnify
                                     {...{

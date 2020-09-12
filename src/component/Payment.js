@@ -7,6 +7,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import { getBasketTotal } from '../context/reducer';
 import CurrencyFormat from 'react-currency-format';
 import axios from '../axios';
+import { db } from "../firebase"
 
 
 function Payment() {
@@ -40,7 +41,7 @@ function Payment() {
 
     console.log("the secret key is >>>>", clientSecret)
 
-
+    console.log("the user is >>>>", user)
     const handleSubmit = async (event) => {
         event.preventDefault();
         setProcessing(true); //stop the buy now btn to click more than once
@@ -53,6 +54,20 @@ function Payment() {
                 card: elements.getElement(CardElement)
             }
         }).then(({ paymentIntent }) => {
+
+            //push the list of basket into db-> doc means get that document
+            db
+                .collection('users')
+                .doc(user?.uid)
+                .collection('orders')
+                .doc(paymentIntent.id)
+                .set({
+                    basket: basket,
+                    amount: paymentIntent.amount,
+                    created: paymentIntent.created
+                })
+
+
             //paymentIntent means the confirmation from stripe
             setSucceeded(true)
             setError(null)
@@ -60,7 +75,7 @@ function Payment() {
 
             //remove all the items in basket after the payment is success
             dispatch({
-                type:"EMPTY_BASKET"
+                type: "EMPTY_BASKET"
             })
             history.replace('/orders')
         })

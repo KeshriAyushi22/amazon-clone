@@ -122,5 +122,5 @@
 }
 
 .home__backdropDetail > .product > .product__info {
-  height: 0px !important;
+  height: fit-content !important;
 }
