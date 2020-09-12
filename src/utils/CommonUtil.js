@@ -31,6 +31,6 @@ export const imageObject = [
         title: "Nikon D3500 W/AF-P DX Nikkor 18-55mm f/3.5-5.6G VR with 16GB Memory Card and Carry Case (Black)",
         price: 350,
         rating: 5,
-        image: "/img/dslr1.jpg"
+        image: "/img/dslr.jpg"
     }
 ]

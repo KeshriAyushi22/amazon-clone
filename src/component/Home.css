@@ -81,10 +81,12 @@
   height: 35px;
   border-radius: 99px;
   border: none;
-  border: solid 2px black;
+  border: solid 2px white;
   background: rgba(255, 255, 255, 0);
   transition: opacity 0.35s ease;
   text-align: center;
+  color: white;
+  font-size: 16px;
 }
 
 .home__dealBtn:hover {
@@ -117,10 +119,21 @@
 
 .home__backdropDetail > .product {
   flex: 0.4 1;
-  height: 359px;
+  height: 360px;
   margin: 0;
 }
 
 .home__backdropDetail > .product > .product__info {
   height: fit-content !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .home__row {
+    display: block;
+  }
+  .home__dealSection {
+    display: block;
+    height: fit-content;
+    max-height: fit-content;
+  }
 }

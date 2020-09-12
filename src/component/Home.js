@@ -74,7 +74,7 @@ function Home() {
             <div className="home__row">
 
                 <div className="home__heading">
-                    <h3>Top Trending Deal's</h3>
+                    <h3>Top Trending Deals</h3>
 
                     <div className="home__dealSection">
 
